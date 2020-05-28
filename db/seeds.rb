@@ -21,4 +21,12 @@ Garden.create!(
   banner_url:"https://images.unsplash.com/photo-1483809715206-0499044b5b69?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1650&q=80"
 )
 
+Tag.destroy_all if Rails.env.development?
+
+names = %w(Fruit\ tree Cactus Greasy\ plant Flower Ferns Conifers)
+
+names.each do |name|
+  Tag.create!(name: name)
+end
+
 puts "Done!"
